@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box; /* padding + border included in element total width/height */
+  }
+
+  #leftdiv {
+  float: left;
+  width: 50%;
+  height: 600px; /* only for demonstration, should be removed */
+  background: rgb(122, 122, 122);
+  padding: 20px;
+  }
+
+  #toprightdiv {
+  float: left;
+  padding: 20px;
+  width: 50%;
+  background-color: rgb(80, 122, 145);
+  height: 300px; /* only for demonstration, should be removed */
+
+  }
+
+  #bottomrightdiv {
+  float: right;
+  padding: 20px;
+  width: 50%;
+  background-color: rgb(90, 21, 143);
+  height: 300px; /* only for demonstration, should be removed */
+
+  }
