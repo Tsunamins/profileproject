@@ -1,49 +1,76 @@
 * {
     box-sizing: border-box; /* padding + border included in element total width/height */
+    font-family: 'Exo 2', sans-serif;
+    
   }
+
+  body {
+    background-color:  rgb(31, 32, 33);
+  }
+
+ 
 
   #leftdiv {
-  float: left;
-  width: 50%;
-  height: 600px; /* only for demonstration, should be removed */
-  background: rgb(190, 193, 196);
-  padding: 20px;
+    float: left;
+    width: 50%;  
+    height: 1000px;
+    background: rgb(227, 220, 216);
+    
+    
   }
 
+  #leftdiv:hover {
+    background-color: rgb(63, 181, 165);
+
+  }
+
+  #toprightdiv:hover {
+    background-color: rgb(108, 46, 130);
+
+  }
+
+  #bottomrightdiv:hover {
+    background-color: rgb(166, 10, 101);
+
+  }
+
+
   #toprightdiv {
-  float: left;
-  padding: 20px;
-  width: 50%;
-  background-color: rgb(103, 104, 107);
-  height: 300px; /* only for demonstration, should be removed */
+    float: left;
+    height: 500px;
+    width: 50%;
+    background-color: rgb(103, 104, 107);
+    
+  
 
   }
 
   #bottomrightdiv {
   float: right;
-  padding: 20px;
+  height: 500px;
   width: 50%;
   background-color: rgb(31, 32, 33);
-  height: 300px; /* only for demonstration, should be removed */
+
+  /* height: 300px;  */
 
   }
 
   .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 300px;
     perspective: 1000px;
+    
+
   }
   
   .flip-card-inner {
-    /* position: relative; */
-    /* width: 100%;
-    height: 100%; */
-    /* keeping above width and height in will show a "card" */
+    position: relative;
+    width: 100%;
+    height: 100%;
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    
   }
   
   .flip-card:hover .flip-card-inner {
@@ -58,12 +85,24 @@
   }
   
   .flip-card-front {
-    
+    /* background-color: #bbb; */
+    font-size: 50px;
     color: black;
+    padding-top: 50px;
   }
   
   .flip-card-back {
-    
+    /* background-color: #2980b9; */
+    text-decoration: none;
     color: white;
+    font-size: 50px;
     transform: rotateY(180deg);
+    padding-top: 50px;
   }
+
+  .flip-card-back a:link {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+  }
+
