@@ -50,10 +50,15 @@
   height: 500px;
   width: 50%;
   background-color: rgb(31, 32, 33);
+ 
 
   /* height: 300px;  */
 
   }
+  p#diffcolortext {
+    color: rgb(103, 104, 107);
+  }
+
 
   .flip-card {
     background-color: transparent;
@@ -87,7 +92,7 @@
   .flip-card-front {
     /* background-color: #bbb; */
     font-size: 30px;
-    color: black;
+    
     padding-top: 50px;
   }
   
@@ -177,4 +182,5 @@
   #summary {
     padding: 50px;
   }
+
 
