@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Exo+2&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../style/art.css">
+        <title>Alison Reilly, developer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body>
+        
+        <!-- Container for the image gallery -->
+<div class="container">
+
+      <!-- Thumbnail images -->
+      <div class="row">
+        <div class="column">
+          <img class="demo cursor" src="../images/pinktilesheet.png" style="width:75%" onclick="currentSlide(1)" alt="Game Assets: Pink Tilesheet made with Tiled, individual objects made at pixilart.com">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../images/bottlewitheffects.png" style="width:75%" onclick="currentSlide(2)" alt="Wine Bottle - Mobile photo, altered in GIMP studio, for The Amateur Wine Reviewer">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../images/hammer.png" style="width:100%" onclick="currentSlide(3)" alt="Blender modeling: Result from following a tutorial">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../images/alisontext.png" style="width:75%" onclick="currentSlide(4)" alt="Blender modeling: Result from Google-Fu">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../images/anims.png" style="width:100%" onclick="currentSlide(5)" alt="Animation Spritesheets - pretty basic but fun - made in pixilart.com and krita">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../images/wineglassbtl.png" style="width:75%" onclick="currentSlide(6)" alt="Pure CSS Wine Glass & Bottle, for The Amateur Wine Reviewer, view on codepen.io/tsunamins">
+        </div>
+        <div class="column">
+          <img class="demo cursor" src="../images/spheregallery.png" style="width:100%" onclick="currentSlide(7)" alt="Pink and Purple texture maps: 1st & 2nd spheres use purple & pink textures on Three.js's MeshBasicMaterial, 3rd sphere uses pink texture on MeshPhongMaterial applying more effects to make it shiny">
+        </div>
+      </div>
+
+    <!-- Full-width images with number text -->
+    <div id="img-cont">
+  
+    <div class="mySlides">
+      <div class="numbertext">1 / 7</div>
+        <img src="../images/pinktilesheet.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 7</div>
+        <img src="../images/bottlewitheffects.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 7</div>
+        <img src="../images/hammer.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 7</div>
+        <img src="../images/alisontext.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+        <img src="../images/anims.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">6 / 7</div>
+        <img src="../images/wineglassbtl.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7 / 7</div>
+        <img src="../images/spheregallery.png" style="width:100%">
+    </div>
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+    <!-- Image text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+  
+  </div>
+
+
+
+
+
+  <script src="../js/art.js"></script>
+
+    </body>
+    </html>
