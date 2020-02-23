@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(23, 23, 24);
+    font-family: 'Exo 2', sans-serif;
+}
+
+#allvideos {
+   
+    text-align: center;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+#allvideos h2 {
+    color: white;
+    background-color: rgb(42, 42, 53);
+    padding: 20px;
+
+    border-radius: 25px;
+}
+
+.video {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    
+    
+
+}
+
+.video iframe {
+    border-radius: 10px;
+}
+
+#supplement a  {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    background-color: rgb(42, 42, 53);
+    display: inline;
+    border-radius: 25px;
+
+}
+
+#supplement img {
+    width: 560px;
+    height: 315px;
+}
+
+#supplement a:hover {
+    background-color: rgb(67, 67, 100);
+    color: white;
+
+}
+
+#supplement p {
+    display: inline-block;
+    color: white;
+    width: 100%;
+}
+
+#supplement a:visited {
+    color: white;
+}
+
+
