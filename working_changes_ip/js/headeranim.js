@@ -7,6 +7,8 @@ import { Sky } from '../lib/Sky.js'
 
 
 function main() {
+ 
+
     var webgldiv = document.getElementById('webgl')
     
     //scene and camera setup
@@ -51,12 +53,12 @@ function main() {
 
     scene.fog = new THREE.Fog( 0x040306, 10, 300 );
 
-    var purpleTexture = new THREE.TextureLoader().load('../images/purpletexture.png')
+    var purpleTexture = new THREE.TextureLoader().load('./images/purpletexture.png')
 
-    var pinkTexture = new THREE.TextureLoader().load('../images/pinktexture.png')
-    var sprite1 = new THREE.TextureLoader().load( '../images/spark1.png' );
-    var sprite2 = new THREE.TextureLoader().load( '../images/bettercircle.png' );
-    var sprite3 = new THREE.TextureLoader().load( '../images/monograd.png' );
+    var pinkTexture = new THREE.TextureLoader().load('./images/pinktexture.png')
+    var sprite1 = new THREE.TextureLoader().load( './images/spark1.png' );
+    var sprite2 = new THREE.TextureLoader().load( './images/bettercircle.png' );
+    var sprite3 = new THREE.TextureLoader().load( './images/monograd.png' );
 
 
 
@@ -151,7 +153,7 @@ function main() {
     var loaderGTLF = new GLTFLoader();
     loaderGTLF.load(
       // resource URL
-      '../threedmodels/Alisonnametext.glb',
+      './threedmodels/Alisonnametext.glb',
       // called when the resource is loaded
       function ( gltf ) {
         console.log(gltf)
@@ -221,7 +223,7 @@ var parametersSprites = [
 
 textureWidth: 512,
 						textureHeight: 512,
-						waterNormals: new THREE.TextureLoader().load( '../images/waternormals.jpg', function ( texture ) {
+						waterNormals: new THREE.TextureLoader().load( './images/waternormals.jpg', function ( texture ) {
 
 							texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
