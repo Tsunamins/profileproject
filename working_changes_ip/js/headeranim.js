@@ -13,7 +13,7 @@ function main() {
     
     //scene, clock and camera setup as well as device based sizing
     const clock = new THREE.Clock();
-    var scene = new THREE.Scene();
+    const scene = new THREE.Scene();
     console.log(window.innerHeight)
     console.log(window.innerWidth)
     const camera = new THREE.PerspectiveCamera(60, (window.innerWidth) / (window.innerHeight), 1, 20000);

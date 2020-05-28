@@ -8,13 +8,13 @@ import { OrbitControls } from '../lib/OrbitControls.js';
 
 
 function main() {
-    var container = document.getElementById('container')
+    const container = document.getElementById('container')
   
     //scene and camera setup
-    var clock = new THREE.Clock();
-    var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 20000);
-    var renderer = new THREE.WebGLRenderer({antialias: true});
+    const clock = new THREE.Clock();
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 20000);
+    const renderer = new THREE.WebGLRenderer({antialias: true});
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
     container.appendChild( renderer.domElement );
@@ -22,9 +22,9 @@ function main() {
     camera.position.y = 0
     camera.position.z = 5;
     
-    var water;
+    let water;
 
-    var controls = new OrbitControls( camera, renderer.domElement );
+    const controls = new OrbitControls( camera, renderer.domElement );
 				controls.maxPolarAngle = Math.PI * 0.495;
 				controls.target.set( 0, 1, 0 );
 				controls.minDistance = 5.0;
@@ -36,40 +36,40 @@ function main() {
    scene.fog = new THREE.Fog( 0x040306, 10, 300 );
 
 
-   var purpleTexture = new THREE.TextureLoader().load('/images/purpletexture.png')
-   var petalTexture = new THREE.TextureLoader().load('/images/scaledpetal.png')
-   var pinkTexture = new THREE.TextureLoader().load('/images/pinktexture.png')
-   var sprite1 = new THREE.TextureLoader().load( '/images/spark1.png' );
-    var sprite2 = new THREE.TextureLoader().load( '/images/bettercircle.png' );
-  var sprite3 = new THREE.TextureLoader().load( '/images/monograd.png' );
+   const purpleTexture = new THREE.TextureLoader().load('/images/purpletexture.png')
+   const petalTexture = new THREE.TextureLoader().load('/images/scaledpetal.png')
+   const pinkTexture = new THREE.TextureLoader().load('/images/pinktexture.png')
+   const sprite1 = new THREE.TextureLoader().load( '/images/spark1.png' );
+    const sprite2 = new THREE.TextureLoader().load( '/images/bettercircle.png' );
+    const sprite3 = new THREE.TextureLoader().load( '/images/monograd.png' );
 
 
 
 /***************************lights*************** */
-    var ambientLight1 = new THREE.AmbientLight( 0x404040 ); // soft white light
-    scene.add( ambientLight1 );
+        const ambientLight1 = new THREE.AmbientLight( 0x404040 ); // soft white light
+        scene.add( ambientLight1 );
 
-    var directionLight1 = new THREE.DirectionalLight( 0xffffff, 1.5 );
-    directionLight1.position.set( 1, 1, 5 );
+        const directionLight1 = new THREE.DirectionalLight( 0xffffff, 1.5 );
+        directionLight1.position.set( 1, 1, 5 );
 				scene.add( directionLight1 );
 
-				var directionLight2 = new THREE.DirectionalLight( 0xffffff, 1.5 );
+				const directionLight2 = new THREE.DirectionalLight( 0xffffff, 1.5 );
 				directionLight2.position.set( 0, - 1, -100 );
         scene.add( directionLight2 );
         
-        // var sphereLightGeo = new THREE.BoxBufferGeometry( 1, 0.33, 1 );
-        // var sphereLightMat = new THREE.MeshPhysicalMaterial( { color: 0x196aa5, roughness: 0.7, metalness: 1, reflectivity: 0.5} );
+        // const sphereLightGeo = new THREE.BoxBufferGeometry( 1, 0.33, 1 );
+        // const sphereLightMat = new THREE.MeshPhysicalMaterial( { color: 0x196aa5, roughness: 0.7, metalness: 1, reflectivity: 0.5} );
 
-        var sphereLightGeo = new THREE.ConeBufferGeometry(1, 1, 3, 4);
-        var sphereLightMat = new THREE.MeshPhysicalMaterial( { color: 0x196aa5, roughness: 0.7, metalness: 1, reflectivity: 1, clearcoat: 0.84, wireframe: true, flatShading: false} );
+        const sphereLightGeo = new THREE.ConeBufferGeometry(1, 1, 3, 4);
+        const sphereLightMat = new THREE.MeshPhysicalMaterial( { color: 0x196aa5, roughness: 0.7, metalness: 1, reflectivity: 1, clearcoat: 0.84, wireframe: true, flatShading: false} );
 				
 
-				var pLight1 = new THREE.PointLight( 0x85f9ff, 4, 100, 2 );
+				const pLight1 = new THREE.PointLight( 0x85f9ff, 4, 100, 2 );
 				pLight1.add( new THREE.Mesh( sphereLightGeo, sphereLightMat) );
         scene.add( pLight1 );
         pLight1.position.setY(1.5)
 
-        var pLight2 = new THREE.PointLight( 0x85f9ff, 2.5, 100, 2 );
+        const pLight2 = new THREE.PointLight( 0x85f9ff, 2.5, 100, 2 );
 				pLight2.add( new THREE.Mesh( sphereLightGeo, sphereLightMat) );
         scene.add( pLight2 );
         pLight2.position.setY(1.5)
@@ -77,9 +77,9 @@ function main() {
 /*********************end lights */
 
     //cube specifics
-    var geometry = new THREE.BoxGeometry( 0.5, 0.5, 0.5 );
-    var material = new THREE.MeshBasicMaterial( { map: purpleTexture } );
-    var cube = new THREE.Mesh( geometry, material ); 
+    const geometry = new THREE.BoxGeometry( 0.5, 0.5, 0.5 );
+    const material = new THREE.MeshBasicMaterial( { map: purpleTexture } );
+    const cube = new THREE.Mesh( geometry, material ); 
     scene.add(cube);
     //moves cube left, down and back
     //cube.position.set(-5, -5, -5);
@@ -91,32 +91,32 @@ function main() {
     cube.position.setX(-5)
     
     //sphere example specifics
-    var sphereGeo = new THREE.SphereBufferGeometry(0.5, 32, 32)
-    var sphereMat = new THREE.MeshBasicMaterial( { map: purpleTexture } );
-    var sphere = new THREE.Mesh(sphereGeo, sphereMat);
+    const sphereGeo = new THREE.SphereBufferGeometry(0.5, 32, 32)
+    const sphereMat = new THREE.MeshBasicMaterial( { map: purpleTexture } );
+    const sphere = new THREE.Mesh(sphereGeo, sphereMat);
     scene.add(sphere)
     sphere.position.setY(3);
     sphere.position.setZ(-5)
 
     
     //grey icos
-    var icoGeo = new THREE.IcosahedronBufferGeometry( 0.5, 0 );
-    var icoMat = new THREE.MeshPhysicalMaterial( { color: 0x353535, emissive: 0x111111, flatShading: true, vertexColors: THREE.NoColors, roughness: 0.5, metalness: 1, reflectivity: 1 } );
-    var smallIco = new THREE.Mesh( icoGeo, icoMat );
+    const icoGeo = new THREE.IcosahedronBufferGeometry( 0.5, 0 );
+    const icoMat = new THREE.MeshPhysicalMaterial( { color: 0x353535, emissive: 0x111111, flatShading: true, vertexColors: THREE.NoColors, roughness: 0.5, metalness: 1, reflectivity: 1 } );
+    const smallIco = new THREE.Mesh( icoGeo, icoMat );
     scene.add( smallIco );
 
   //pink icos
-    var icoGeo2 = new THREE.IcosahedronBufferGeometry( 0.5, 2 );
-    var icoMat2 = new THREE.MeshBasicMaterial( { map: pinkTexture } );
-    var smallIco2 = new THREE.Mesh( icoGeo2, icoMat2 );
+    const icoGeo2 = new THREE.IcosahedronBufferGeometry( 0.5, 2 );
+    const icoMat2 = new THREE.MeshBasicMaterial( { map: pinkTexture } );
+    const smallIco2 = new THREE.Mesh( icoGeo2, icoMat2 );
     scene.add( smallIco2 );
     smallIco2.position.setY(3);
     smallIco2.position.setX(5)
 
 //shiny sphere
-    var sphereGeo2 = new THREE.SphereBufferGeometry(0.3, 32, 32);
-    var sphereMat2 = new THREE.MeshPhongMaterial( { color: 0x6ee5ed, specular: 0x1c1c1c, shininess: 40, flatShading: false, vertexColors: THREE.NoColors, map: pinkTexture } );
-    var sphere2 = new THREE.Mesh( sphereGeo2, sphereMat2 );
+    const sphereGeo2 = new THREE.SphereBufferGeometry(0.3, 32, 32);
+    const sphereMat2 = new THREE.MeshPhongMaterial( { color: 0x6ee5ed, specular: 0x1c1c1c, shininess: 40, flatShading: false, vertexColors: THREE.NoColors, map: pinkTexture } );
+    const sphere2 = new THREE.Mesh( sphereGeo2, sphereMat2 );
     sphere2.position.setY(1.0)
     sphere2.position.setZ(1.0)
     sphere2.position.setX(-0.25)
@@ -126,9 +126,9 @@ function main() {
   //for some reason also fixes the look of the particles
     sprite1.repeat.set(1,1)
     sprite2.repeat.set(1,1)
-    var sphereGeo3 = new THREE.SphereBufferGeometry(0.1, 32, 32);
-    var sphereMat3 = new THREE.MeshPhysicalMaterial( { color: 0x8e7d23, emissive: 0x728751, roughness: 0.5, reflectivity: 1, clearcoatRoughness: 1, vertexColors: THREE.NoColors, map: sprite2 } );
-    var sphere3 = new THREE.Mesh( sphereGeo3, sphereMat3 );
+    const sphereGeo3 = new THREE.SphereBufferGeometry(0.1, 32, 32);
+    const sphereMat3 = new THREE.MeshPhysicalMaterial( { color: 0x8e7d23, emissive: 0x728751, roughness: 0.5, reflectivity: 1, clearcoatRoughness: 1, vertexColors: THREE.NoColors, map: sprite2 } );
+    const sphere3 = new THREE.Mesh( sphereGeo3, sphereMat3 );
     sphere3.position.setY(2)
     sphere3.position.setZ(1.0)
     sphere3.position.setX(-2)
@@ -136,7 +136,7 @@ function main() {
     scene.add( sphere3 );
     
 //3d text
-    var loaderGTLF = new GLTFLoader();
+    const loaderGTLF = new GLTFLoader();
     loaderGTLF.load(
       // resource URL
       '/threedmodels/Alisonnametext.glb',
@@ -161,19 +161,19 @@ function main() {
     );
 
 //particles:
-var materials = [];
-var particleGeo =  new THREE.BufferGeometry();
-var vertices = [];
+const materials = [];
+const particleGeo =  new THREE.BufferGeometry();
+const vertices = [];
 
 
 
-for ( var i = 0; i < 25; i ++ ) { //console.log(Math.random() * 2000-1000)
-  // var x = Math.random()
-  // var y = Math.random()
-  // var z = Math.random()
-  var x = Math.random() * (2000 - 1) + 1;
-  var y = Math.random() * (2000 - 1) + 1;
-  var z = Math.random() * (2000 - 1) + 1;
+for ( let i = 0; i < 25; i ++ ) { //console.log(Math.random() * 2000-1000)
+  // let x = Math.random()
+  // let y = Math.random()
+  // let z = Math.random()
+  let x = Math.random() * (2000 - 1) + 1;
+  let y = Math.random() * (2000 - 1) + 1;
+  let z = Math.random() * (2000 - 1) + 1;
   
   vertices.push( x, y, z );
 }
@@ -181,23 +181,23 @@ for ( var i = 0; i < 25; i ++ ) { //console.log(Math.random() * 2000-1000)
 particleGeo.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 1 ) );
 
 
-var parametersSprites = [
+const parametersSprites = [
   [[ 298, 0.47, 0.57 ], sprite1, 2 ],
   // [[ 199, 0.74, 0.37 ], sprite2, 2 ],
   // [[ 204, 0.97, 0.45 ], sprite3, 5 ],
 
  ];
 
- for ( var i = 0; i < parametersSprites.length; i ++ ) {
+ for ( let i = 0; i < parametersSprites.length; i ++ ) {
 
-  var color = parametersSprites[ i ][ 0 ];
-  var sprite = parametersSprites[ i ][ 1 ];
-  var size = parametersSprites[ i ][ 2 ];
+  let color = parametersSprites[ i ][ 0 ];
+  let sprite = parametersSprites[ i ][ 1 ];
+  let size = parametersSprites[ i ][ 2 ];
                                                                                 //blending change to Normal to see diff - Multiply and Subtractive don't work in this context
   materials[ i ] = new THREE.PointsMaterial( { size: size, map: sprite, blending: THREE.AdditiveBlending, depthTest: false} );
   materials[ i ].color.setHSL( color[ 0 ], color[ 1 ], color[ 2 ] );
   console.log(materials[0])
-  var particles = new THREE.Points( geometry, materials[ i ] );
+  const particles = new THREE.Points( geometry, materials[ i ] );
   //console.log(particles)
   particles.rotation.x = Math.random() * 6;
   particles.rotation.y = Math.random() * 6
@@ -212,12 +212,12 @@ var parametersSprites = [
 
 
   /*start water*/
-  var lightWater = new THREE.DirectionalLight( 0xffffff, 0.8 )
-  var waterGeo = new THREE.PlaneBufferGeometry(500, 500)
+  const lightWater = new THREE.DirectionalLight( 0xffffff, 0.8 )
+  const waterGeo = new THREE.PlaneBufferGeometry(500, 500)
   water = new Water(waterGeo,
-    {
+        {
 
-textureWidth: 512,
+            textureWidth: 512,
 						textureHeight: 512,
 						waterNormals: new THREE.TextureLoader().load( '/images/waternormals.jpg', function ( texture ) {
 
@@ -238,9 +238,9 @@ textureWidth: 512,
 				scene.add( water );
 
 
-        var sky = new Sky();
+        const sky = new Sky();
 
-				var uniforms = sky.material.uniforms;
+				const uniforms = sky.material.uniforms;
 
 				uniforms[ 'turbidity' ].value = 10;
 				uniforms[ 'rayleigh' ].value = 2;
@@ -248,13 +248,13 @@ textureWidth: 512,
 				uniforms[ 'mieCoefficient' ].value = 0.005;
 				uniforms[ 'mieDirectionalG' ].value = 0.8;
 
-				var parameters = {
+				const parameters = {
 					distance: 400,
 					inclination: 0.49,
 					azimuth: 0.10
 				};
 
-				var cubeCamera = new THREE.CubeCamera( 0.1, 1, 512 );
+				const cubeCamera = new THREE.CubeCamera( 0.1, 1, 512 );
 				cubeCamera.renderTarget.texture.generateMipmaps = true;
 				cubeCamera.renderTarget.texture.minFilter = THREE.LinearMipmapLinearFilter;
 
@@ -262,8 +262,8 @@ textureWidth: 512,
 
 				function updateSun() {
 
-					var theta = Math.PI * ( parameters.inclination - 0.5 );
-					var phi = 2 * Math.PI * ( parameters.azimuth - 0.5 );
+					const theta = Math.PI * ( parameters.inclination - 0.5 );
+					const phi = 2 * Math.PI * ( parameters.azimuth - 0.5 );
 
 					lightWater.position.x = parameters.distance * Math.cos( phi );
 					lightWater.position.y = parameters.distance * Math.sin( phi ) * Math.sin( theta );
@@ -275,20 +275,16 @@ textureWidth: 512,
 					cubeCamera.update( renderer, sky );
 
 				}
-
 				updateSun();
+    }
 
+    function onWindowResize() {
 
-}
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
 
-function onWindowResize() {
-
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize( window.innerWidth, window.innerHeight );
-
-}
+        renderer.setSize( window.innerWidth, window.innerHeight );
+      }
     
     
 
@@ -321,17 +317,17 @@ function onWindowResize() {
 
         smallIco2.rotation.x += 0.01;
         smallIco2.rotation.y += 0.01;
-        var icoTimer = Date.now() * 0.003;
-        var timer = Date.now() * 0.0009;
-        var particleTime = Date.now() * 0.00005;
-        var delta = clock.getDelta();
+        const icoTimer = Date.now() * 0.003;
+        const timer = Date.now() * 0.0009;
+        const particleTime = Date.now() * 0.00005;
+        const delta = clock.getDelta();
 
-        var timeWater = performance.now() * 0.001
+        const timeWater = performance.now() * 0.001
         water.material.uniforms[ 'time' ].value += 1.0 / 60.0;
         //original:
-        //var timer = Date.now() * 0.01;
+        //const timer = Date.now() * 0.01;
         
-        //var d = 150;
+        //const d = 150;
 
         smallIco.position.z = Math.cos( icoTimer * 0.4 ) * 2
         smallIco.position.y = Math.sin( icoTimer * 0.3 ) * 4
@@ -384,9 +380,9 @@ function onWindowResize() {
         pLight2.position.x = Math.sin( timer * 0.7) * 5;
         
 
-        for ( var i = 0; i < scene.children.length; i ++ ) {
+        for ( const i = 0; i < scene.children.length; i ++ ) {
 
-					var object = scene.children[ i ];
+					const object = scene.children[ i ];
 						
 					if ( object instanceof THREE.Points ) {
 
@@ -396,11 +392,11 @@ function onWindowResize() {
 
 				}
 
-				for ( var i = 0; i < materials.length; i ++ ) {
+				for ( const i = 0; i < materials.length; i ++ ) {
 
-					var color = parametersSprites[ i ][ 0 ];
+					const color = parametersSprites[ i ][ 0 ];
 
-					var h = ( 360 * ( color[ 0 ] + particleTime ) % 200) / 200;
+					const h = ( 360 * ( color[ 0 ] + particleTime ) % 200) / 200;
 					materials[ i ].color.setHSL( h, color[ 1 ], color[ 2 ] );
 
 				}
