@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
     text-align: center;
+    font-family: 'Exo 2', sans-serif;
   }
+
   a, a:visited {
     color: rgb(14, 235, 62);
     text-shadow: 2px 2px 8px rgb(14, 235, 62);
