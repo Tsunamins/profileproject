@@ -36,12 +36,12 @@ function main() {
    scene.fog = new THREE.Fog( 0x040306, 10, 300 );
 
 
-   const purpleTexture = new THREE.TextureLoader().load('/images/purpletexture.png')
-   const petalTexture = new THREE.TextureLoader().load('/images/scaledpetal.png')
-   const pinkTexture = new THREE.TextureLoader().load('/images/pinktexture.png')
-   const sprite1 = new THREE.TextureLoader().load( '/images/spark1.png' );
-    const sprite2 = new THREE.TextureLoader().load( '/images/bettercircle.png' );
-    const sprite3 = new THREE.TextureLoader().load( '/images/monograd.png' );
+   const purpleTexture = new THREE.TextureLoader().load('../images/purpletexture.png')
+   const petalTexture = new THREE.TextureLoader().load('../images/scaledpetal.png')
+   const pinkTexture = new THREE.TextureLoader().load('../images/pinktexture.png')
+   const sprite1 = new THREE.TextureLoader().load( '../images/spark1.png' );
+    const sprite2 = new THREE.TextureLoader().load( '../images/bettercircle.png' );
+    const sprite3 = new THREE.TextureLoader().load( '../images/monograd.png' );
 
 
 
@@ -139,7 +139,7 @@ function main() {
     const loaderGTLF = new GLTFLoader();
     loaderGTLF.load(
       // resource URL
-      '/threedmodels/Alisonnametext.glb',
+      '../threedmodels/Alisonnametext.glb',
       // called when the resource is loaded
       function ( gltf ) {
         console.log(gltf)
@@ -197,7 +197,7 @@ const parametersSprites = [
   materials[ i ] = new THREE.PointsMaterial( { size: size, map: sprite, blending: THREE.AdditiveBlending, depthTest: false} );
   materials[ i ].color.setHSL( color[ 0 ], color[ 1 ], color[ 2 ] );
   console.log(materials[0])
-  const particles = new THREE.Points( geometry, materials[ i ] );
+  let particles = new THREE.Points( geometry, materials[ i ] );
   //console.log(particles)
   particles.rotation.x = Math.random() * 6;
   particles.rotation.y = Math.random() * 6
@@ -219,7 +219,7 @@ const parametersSprites = [
 
             textureWidth: 512,
 						textureHeight: 512,
-						waterNormals: new THREE.TextureLoader().load( '/images/waternormals.jpg', function ( texture ) {
+						waterNormals: new THREE.TextureLoader().load( '../images/waternormals.jpg', function ( texture ) {
 
 							texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
 
@@ -380,9 +380,9 @@ const parametersSprites = [
         pLight2.position.x = Math.sin( timer * 0.7) * 5;
         
 
-        for ( const i = 0; i < scene.children.length; i ++ ) {
+        for ( let i = 0; i < scene.children.length; i ++ ) {
 
-					const object = scene.children[ i ];
+					let object = scene.children[ i ];
 						
 					if ( object instanceof THREE.Points ) {
 
@@ -392,11 +392,11 @@ const parametersSprites = [
 
 				}
 
-				for ( const i = 0; i < materials.length; i ++ ) {
+				for ( let i = 0; i < materials.length; i ++ ) {
 
-					const color = parametersSprites[ i ][ 0 ];
+					let color = parametersSprites[ i ][ 0 ];
 
-					const h = ( 360 * ( color[ 0 ] + particleTime ) % 200) / 200;
+					let h = ( 360 * ( color[ 0 ] + particleTime ) % 200) / 200;
 					materials[ i ].color.setHSL( h, color[ 1 ], color[ 2 ] );
 
 				}
