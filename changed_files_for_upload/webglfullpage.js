@@ -197,7 +197,7 @@ const parametersSprites = [
   materials[ i ] = new THREE.PointsMaterial( { size: size, map: sprite, blending: THREE.AdditiveBlending, depthTest: false} );
   materials[ i ].color.setHSL( color[ 0 ], color[ 1 ], color[ 2 ] );
   console.log(materials[0])
-  const particles = new THREE.Points( geometry, materials[ i ] );
+  let particles = new THREE.Points( geometry, materials[ i ] );
   //console.log(particles)
   particles.rotation.x = Math.random() * 6;
   particles.rotation.y = Math.random() * 6
@@ -380,9 +380,9 @@ const parametersSprites = [
         pLight2.position.x = Math.sin( timer * 0.7) * 5;
         
 
-        for ( const i = 0; i < scene.children.length; i ++ ) {
+        for ( let i = 0; i < scene.children.length; i ++ ) {
 
-					const object = scene.children[ i ];
+					let object = scene.children[ i ];
 						
 					if ( object instanceof THREE.Points ) {
 
@@ -392,11 +392,11 @@ const parametersSprites = [
 
 				}
 
-				for ( const i = 0; i < materials.length; i ++ ) {
+				for ( let i = 0; i < materials.length; i ++ ) {
 
-					const color = parametersSprites[ i ][ 0 ];
+					let color = parametersSprites[ i ][ 0 ];
 
-					const h = ( 360 * ( color[ 0 ] + particleTime ) % 200) / 200;
+					let h = ( 360 * ( color[ 0 ] + particleTime ) % 200) / 200;
 					materials[ i ].color.setHSL( h, color[ 1 ], color[ 2 ] );
 
 				}
