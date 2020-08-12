@@ -1,6 +1,10 @@
 * {
     box-sizing: border-box;
     font-family: 'Exo 2', sans-serif;
+    -webkit-transition: background-color 0.5s ease-out;
+    -moz-transition: background-color 0.5s ease-out;
+    -o-transition: background-color 0.5s ease-out;
+    transition: background-color 0.5s ease-out;
   }
 
 
@@ -87,8 +91,8 @@ body {
 
 .panes {
  
-  color: rgb(14, 235, 62);
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
  
   
   
@@ -108,13 +112,16 @@ body {
 
 #nav {
   display: inline-table;
+  
 
 }
 
+
+
 #nav a{
   display: inline-table;
- text-decoration: none;
-  background: rgba(0, 0, 0, 0.623);
+  text-decoration: none;
+ 
   width: 120px;
   height: 70px;
   border-radius: 10px;
@@ -122,16 +129,26 @@ body {
   text-align: center;
   padding: 10px;
   margin-left: 10px;
-  color: rgb(14, 235, 62);
- 
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
-  box-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 2px 2px 8px rgba(23, 110, 103, 0.644);
+  box-shadow: 2px 2px 8px rgba(23, 110, 103, 0.644);
+
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
  
 }
 
+#nav a:hover {
+  color: rgb(14, 47, 235);
+  background-color: rgba(8, 34, 34, 0.795);
+}
+
 #nav a:visited {
-  color: rgb(14, 235, 62);
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  text-shadow: 2px 2px 8px rgb(23, 110, 103);
 
 }
 
@@ -168,8 +185,8 @@ ul li {
   /* background: rgba(0, 0, 0, 0.623);
   width: 160px;
   border-radius: 10px; */
-  color: rgb(14, 235, 62);
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
   font-size: 18px;
   text-align: center;
   text-decoration: none;
@@ -184,14 +201,14 @@ ul li {
   width: 160px;
   border-radius: 10px;
   padding: 5px;
-  color: rgb(14, 235, 62);
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
 }
 
 .overlay-link a:visited {
   text-decoration: none;
-  color: rgb(14, 235, 62);
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
 
 }
 
@@ -216,19 +233,23 @@ ul li {
   position: -o-sticky;
   position: sticky;
   /* end sticky settings */
-  width: 120px;
-  height: 25px;
+  width: 180px;
+  height: 50px;
   border-radius: 10px;
-  
+  padding-top: 5px;
   text-align: center;
 	
 	
-  color: rgb(14, 235, 62);
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
   /* background-image: url('/portfolio-ip/images/vertical-nav-bar.png'); */
-  font-size: 18px;
+  font-size: 25px;
  
  
+}
+
+.side-icon:hover {
+  background-color: rgba(1, 32, 32, 0.603);
 }
 
 
@@ -263,14 +284,15 @@ ul li {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 18px;
-  color: rgb(14, 235, 62);
-  text-shadow: 2px 2px 8px rgb(14, 235, 62);
+  color: rgb(39, 151, 140);
+  /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
   display: block;
   transition: 0.3s;
 }
 
 .sidenav a:hover {
-  background-color: rgba(107, 128, 112, 0.74);
+  margin-left: 2px;
+  background-color: rgba(1, 32, 32, 0.603);
   color: rgb(14, 47, 235);
 }
 

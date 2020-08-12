@@ -5,17 +5,21 @@
   }
 
   a, a:visited {
-    color: rgb(14, 235, 62);
-    text-shadow: 2px 2px 8px rgb(14, 235, 62);
+    color: rgb(39, 151, 140);
+    /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
     text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(214, 205, 175);
   }
   
   body {
     background: radial-gradient(circle, rgba(0,0,0,1) 70%, rgba(44,65,65,1) 100%);
     padding: 20px;
     font-family: Arial;
-    color: rgb(14, 235, 62);
-    text-shadow: 2px 2px 8px rgb(14, 235, 62);
+    color: rgb(39, 151, 140);
+    /* text-shadow: 2px 2px 8px rgb(14, 235, 62); */
   }
 
   iframe {
