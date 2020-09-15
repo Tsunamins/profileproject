@@ -15,5 +15,3 @@ My working portfolio site, meant to serve as a landing page and become more adva
 -Incorporate React in parts or most of site
 -Re-do "art" gallery, it only serves a purpose for now
 -Probably some other stuff
-
-
